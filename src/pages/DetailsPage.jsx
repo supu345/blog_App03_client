@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Breadcrumb from "../components/Breadcrumb";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { base_api_url } from "../config/config";
 import parse from "html-react-parser";
 import { FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
@@ -47,11 +47,9 @@ const DetailsPage = () => {
         <div className="w-full  md:w-2/3">
           {news ? (
             <div>
-              <Link to={`/news/${item.slug}`}>
-                <p className="text-3xl font-bold mb-5  hover:text-red-400 hover:underline">
-                  {news.title}
-                </p>
-              </Link>
+              <p className="text-3xl font-bold mb-5  hover:text-red-400 hover:underline">
+                {news.title}
+              </p>
 
               <img
                 src={news.image}
