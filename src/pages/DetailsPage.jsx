@@ -47,7 +47,12 @@ const DetailsPage = () => {
         <div className="w-full  md:w-2/3">
           {news ? (
             <div>
-              <p className="text-3xl font-bold mb-5">{news.title}</p>
+              <Link to={`/news/${item.slug}`}>
+                <p className="text-3xl font-bold mb-5  hover:text-red-400 hover:underline">
+                  {news.title}
+                </p>
+              </Link>
+
               <img
                 src={news.image}
                 alt="img"

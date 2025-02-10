@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Breadcrumb from "../components/Breadcrumb";
 import SearchNews from "../components/SearchNews";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { base_api_url } from "../config/config";
-import Search from "../components/Search";
-import RecentNews from "../components/RecentNews";
 import PopularNews from "../components/PopularNews";
 import HeaderCategory from "../components/HeaderCategory";
 import { FaFacebookF, FaLinkedinIn, FaYoutube } from "react-icons/fa";
@@ -76,7 +74,12 @@ const SearchPage = () => {
                       alt="News"
                       className="w-full h-60 object-cover rounded-md mb-4"
                     />
-                    <h2 className="text-lg font-semibold">{item.title}</h2>
+                    <Link to={`/news/${item.slug}`}>
+                      <h2 className="text-lg font-semibold hover:text-red-400 hover:underline">
+                        {item.title}
+                      </h2>
+                    </Link>
+
                     <p className="text-sm text-gray-600 mt-4">
                       {item.description}
                     </p>
