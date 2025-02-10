@@ -2,7 +2,7 @@ const production = "production";
 const local = "dev";
 
 const local_api_url = "http://localhost:5030";
-const production_api_url = "https://blog-app03-api.onrender.com/";
+const production_api_url = "https://blog-app03-api.onrender.com";
 
 const mode = production;
 
